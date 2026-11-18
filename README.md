@@ -2,28 +2,7 @@
 
 A terminal simulation of a coffee machine. It tracks ingredients and cash in memory, sells three drinks, and restores the previous balance and stock when a purchase fails.
 
-[Demo](#demo) · [Repository map](#repository-map) · [PDF slides](docs/readme/overview.pdf) · [AGENTS.md](AGENTS.md)
-
-## Demo
-
-![Local CLI run with scripted input. Buying one espresso raises the balance from $550 to $554.](docs/readme/demo.png)
-
-Local CLI run with scripted input. Buying one espresso raises the balance from $550 to $554.
-
-1. Choose buy, then 1 for espresso.
-2. Choose status to see $554 and 365 ml of water.
-3. Choose exit to end the session.
-
-## How it works
-
-```mermaid
-flowchart TD
-    A["Choose a drink"] --> B{"Enough stock?"}
-    B -->|Yes| C["Complete sale"]
-    B -->|No| D["Restore original stock and cash"]
-```
-
-## Repository map
+## Implementation guide
 
 | File or directory | Purpose |
 | --- | --- |
@@ -41,12 +20,4 @@ Use the educational runtime that supplies the `sync-input` module, then run `nod
 
 The `fill` and `take` actions use hardcoded exercise credentials. Each run starts with the same stock and cash.
 
-## Milk per drink
-
-Source: [recipes in main.js](main.js). Each solid block represents approximately 10 ml.
-
-```text
-Espresso                              0 ml
-Latte       ██████████████████████  215 ml
-Cappuccino  ███████████████         145 ml
-```
+[Implementation history](https://github.com/YauheniShakau/coffeeMachine/commits/main/)
